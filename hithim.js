@@ -13,6 +13,7 @@ export class example extends plugin {
       /** 功能描述 */
       dsc: '简单开发示例',
       /** https://oicqjs.github.io/oicq/#events */
+	  /** https://github.com/huzwu/hithim-plugin.git */
       event: 'message',
       /** 优先级，数字越小等级越高 */
       priority: 5000,
@@ -61,15 +62,40 @@ export class example extends plugin {
      
       let num1 = Math.round(Math.random() * 100 * 1.1);
       let num2 = Math.round(Math.random() * 100 / 1.1);
+	  let num3 = Math.round();
+	  let num4 = Math.round();
+	  
      
       if (num1 < num2) {
-        e.reply(`你触发了背刺暴击,击穿了他的圣遗物,因此你受到${num1}点伤害,对方受到${num2}点伤害,大胜！`)
-        e.group.muteMember(qq2, num1);
-        e.group.muteMember(qq, num2 * 2);
+		  if(num3 > num4){
+			  e.reply(`你触发了背刺暴击,击穿了他的圣遗物,因此你受到${num1}点伤害,对方受到${num2}点伤害,大胜！`)
+			  e.group.muteMember(qq2, num1);
+			  e.group.muteMember(qq, num2 * 2);
+		  } else if (num3 < num4) {
+			  e.reply(`你抽到六星火神班尼特，火焰亮瞎了对手的双眼,因此你受到${num1}点伤害,对方受到${num2}点伤害,大胜！`)
+			  e.group.muteMember(qq2, num1);
+			  e.group.muteMember(qq, num2 * 2);
+		  } else {
+			  e.reply(`你成功开启魔王武装,击穿了对手的生命头,因此你受到${num1}点伤害,对方受到${num2}点伤害,大胜！`)
+			  e.group.muteMember(qq2, num1);
+			  e.group.muteMember(qq, num2 * 2);
+		  }  
+        
       } else if (num1 > num2) {
-        e.reply(`你圣遗物点满了小公鸡,他专武爆伤高达2500%,因此你受到${num1}点伤害,对方受到${num2}点伤害,大败！`)
-        e.group.muteMember(qq2, num1 * 2);
-        e.group.muteMember(qq, num2);
+		  	  if(num3 > num4){
+                    e.reply(`你圣遗物点满了小公鸡,他专武爆伤高达2500%,因此你受到${num1}点伤害,对方受到${num2}点伤害,大败！`)
+                    e.group.muteMember(qq2, num1 * 2);
+                    e.group.muteMember(qq, num2);
+		     } else if (num3 < num4) {
+		        	e.reply(`你抽到六星火神班尼特，从天而降的石头打晕了班尼特,因此你受到${num1}点伤害,对方受到${num2}点伤害,大败！`)
+		        	e.group.muteMember(qq2, num1);
+		        	e.group.muteMember(qq, num2 * 2);
+		       } else {
+		        	e.reply(`你成功强化满天赋,奈何对方开启了祸津御建鸣神命,因此你受到${num1}点伤害,对方受到${num2}点伤害,大败！`)
+		        	e.group.muteMember(qq2, num1);
+		        	e.group.muteMember(qq, num2 * 2);
+		  }
+
       } else {
         e.reply(`你触发了替身攻击，他触发了完美弹反,因此你受到${num1}点伤害,对方受到${num2}点伤害,同归于尽！`)
         e.group.muteMember(qq2, num1);
