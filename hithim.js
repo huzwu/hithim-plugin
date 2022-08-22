@@ -62,8 +62,8 @@ export class example extends plugin {
      
       let num1 = Math.round(Math.random() * 100 * 1.1);
       let num2 = Math.round(Math.random() * 100 / 1.1);
-	  let num3 = Math.round();
-	  let num4 = Math.round();
+	  let num3 = Math.random();
+	  let num4 = Math.random();
 	  
      
       if (num1 < num2) {
